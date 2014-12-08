@@ -10,6 +10,7 @@
    Base styles: opinionated defaults
    ========================================================================== */
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,500,100);
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 html,
 button,
 input,
@@ -98,15 +99,15 @@ textarea {
    ========================================================================== */
 
 body{background-color: #fcfcfc;}
-    .stage-menu{float:left; width:150px; height:100%; position:fixed; top:0; left:0; background-color: rgba(233,233,233,1); border-right: 3px solid #205E84; font-family: 'Roboto', sans-serif;}
-        .stage-menu-color{ float:left; width:100%; height: 100%; position:absolute; top:0; left:0; z-index: -1;
-        background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
-background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+    .stage-menu{float:left; width:150px; height:100%; position:fixed; top:0; left:0; background-color: rgba(255,255,255,1);  font-family: 'Roboto', sans-serif;}
+        .stage-menu-color{ float:left; width:100%; height: 100%; position:absolute; top:0; left:0; z-index: -1; border-right:1px solid #bbb;
+background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 93%, rgba(0,0,0,0.1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(93%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 93%,rgba(0,0,0,0.1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 93%,rgba(0,0,0,0.1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 93%,rgba(0,0,0,0.1) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 93%,rgba(0,0,0,0.1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#1a000000',GradientType=1 ); /* IE6-9 */
 
         }
 
@@ -117,13 +118,39 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 /* MENU */
 
 .menu-group{padding:0;}
-.menu-group ul, .menu-group li{list-style:none; margin:0; padding-left:20px;}
+.menu-group ul, .menu-group li{list-style:none; margin:0; padding-left:20px; float: left;width: 126px;}
 .menu-group li ul{padding-left:0;}
-.menu-group li{line-height: 40px; margin:0; margin-left:4px;}
-.menu-group li:hover{border-left: 4px solid red; margin-left:0; background:#ff5555;}
+.menu-group li{line-height: 40px; margin:0; border-left: 4px solid rgba(184,0,56,0.2); height:40px; position:relative; cursor:pointer; border-top:1px solid transparent;}
+.menu-group li:hover{border-left: 4px solid rgba(184,0,56,1); margin-left:0; background:#fafafa; border-top:1px solid #ccc; background: rgb(234,234,234); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(234,234,234,1) 0%, rgba(255,255,255,1) 12%); /* FF3.6+ */
+background: linear-gradient(to bottom,  rgba(234,234,234,1) 0%,rgba(255,255,255,1) 12%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
 .menu-group li ul{width:0; height:100%; position:fixed; margin:0; display:none;  left:153px; top:0;} 
-.menu-group li:hover ul{position:fixed; width:250px; height:100%; left:153px; top:0;background:#cdcdcd; margin:0; display:block; transition-duration: 2s;}
+.menu-group li:hover ul{position:fixed; width:250px; height:100%; left:150px; top:0;background:#fff; margin:0; display:block; transition-duration: 2s;}
 .menu-group li:hover + .content{margin-left:300px;}
+.menu-group li:hover:after{
+  width: 0;
+height: 0;
+float: right;
+right: -1px;
+position: absolute;
+top:-5px;
+border-top: 25px solid transparent;
+border-right: 25px solid white;
+border-bottom: 25px solid transparent;
+content: '';}
+.menu-group li:hover:before{
+  width: 0;
+height: 0;
+float: right;
+right: -1px;
+top: -5px;
+position: absolute;
+border-top: 25px solid transparent;
+border-right: 26px solid #ccc;
+border-bottom: 25px solid transparent;
+content: '';}
 
 
 /*CONTENT*/
