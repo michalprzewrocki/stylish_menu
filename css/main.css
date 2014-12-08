@@ -126,8 +126,12 @@ background: -moz-linear-gradient(top,  rgba(234,234,234,1) 0%, rgba(255,255,255,
 background: linear-gradient(to bottom,  rgba(234,234,234,1) 0%,rgba(255,255,255,1) 12%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
-.menu-group li ul{width:0; height:100%; position:fixed; margin:0; display:none;  left:153px; top:0;} 
-.menu-group li:hover ul{position:fixed; width:250px; height:100%; left:150px; top:0;background:#fff; margin:0; display:block; transition-duration: 2s;}
+.menu-group li ul{width:0; height:100%; relative margin:0; display:none;  left:153px; } 
+
+.menu-group li ul li{background: rgba(0,0,0,0.1); width:166px;}
+.menu-group li ul li:after{display:none;}
+.menu-group li ul li:before{display:none;}
+.menu-group li:hover ul{position:fixed; width:250px; height:100%; left:150px; top:0;background:#fff; margin:0; display:block; box-shadow:-1px 0 1px #ccc;}
 .menu-group li:hover + .content{margin-left:300px;}
 .menu-group li:hover:after{
   width: 0;
