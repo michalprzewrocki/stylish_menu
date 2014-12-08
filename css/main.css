@@ -149,7 +149,7 @@ content: '';}
 height: 0;
 float: right;
 right: -1px;
-top: -5px;
+top: -5px;   
 position: absolute;
 border-top: 25px solid transparent;
 border-right: 26px solid #ccc;
@@ -160,7 +160,7 @@ content: '';}
 /*CONTENT*/
 .content{ position:absolute; margin-left:200px; margin-right:50px;}
 
-
+#darth{display:none;}
 
 
 /* ==========================================================================
